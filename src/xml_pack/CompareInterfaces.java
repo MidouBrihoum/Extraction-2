@@ -114,8 +114,8 @@ for (int i = 0; i < IbcPart.size(); i++) {
 		}
 	}
 }
-		
-Sim= ((float)found/(float)total)*100 ; 
+if(total!=0){		
+Sim= ((float)found/(float)total)*100 ; }
 System.out.print( " le nbr de paramétre total = "+total) ;
 System.out.print( " le nbr de paramétre trouvé dans ice =  "+found) ;
 System.out.print( " la similarité est  "+Sim) ;
