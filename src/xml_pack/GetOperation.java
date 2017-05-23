@@ -51,11 +51,11 @@ public class GetOperation {
 				
 		//	GlobalElement = IBCdoc.getDocumentElement(); 
 				NodeList operations = GlobalElement.getElementsByTagName("operation"); // Liste des operations
-
 				
 				
 				
 				for (int temp = 0; temp < operations.getLength(); temp++) { // loop pour chaque operation
+
 					Node tempOp = operations.item(temp); 
 					if (tempOp.getNodeType() == Node.ELEMENT_NODE) {
 						

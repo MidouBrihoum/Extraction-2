@@ -1,0 +1,22 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Prestataires (Prestataire)+>
+<!ATTLIST Prestataires
+  xmlns CDATA >
+
+<!ELEMENT Prestataire (name,adresse,description)>
+<!ATTLIST Prestataire
+  xmlns CDATA 
+  id ID #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name
+  xmlns CDATA >
+
+<!ELEMENT adresse (#PCDATA)>
+<!ATTLIST adresse
+  xmlns CDATA >
+
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+  xmlns CDATA >
