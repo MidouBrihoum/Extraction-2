@@ -17,15 +17,15 @@ public class Traitement {
 	
 	
 	void traite(){
-		Element globalICE = GetGlobalElementFromXmlFileName("ICE.XML");
-		Element globalIBC = GetGlobalElementFromXmlFileName("IBC.XML");
+		Element globalICE = GetGlobalElementFromXmlFileName("ICE.XML");  // retrouve l'element globale de ICE
+		Element globalIBC = GetGlobalElementFromXmlFileName("IBC.XML"); // retrouve l'element globale de IBC 
 		
-		InterfaceIBC_ICE ICE = new GenerateInterfaceFromGElement(globalICE).Getinterface();
-		InterfaceIBC_ICE IBC = new GenerateInterfaceFromGElement(globalIBC).Getinterface();
+		InterfaceIBC_ICE ICE = new GenerateInterfaceFromGElement(globalICE).Getinterface();  // retrouve l'interface depuis l'element globale
+		InterfaceIBC_ICE IBC = new GenerateInterfaceFromGElement(globalIBC).Getinterface();// retrouve l'interface depuis l'element globale
 
-		CompareInterfaces compare = new  CompareInterfaces(IBC,ICE);
+		CompareInterfaces compareinterface = new  CompareInterfaces(IBC,ICE); // instancier la classe qui compare les interfaces 
 		
-		compare.Compare();
+	System.out.println("la similarité totale est: "+compareinterface.Compare()); 
 		
 	}
 	
