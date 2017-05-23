@@ -20,7 +20,7 @@ import java.io.File;
 
 public class GetOperation {
 	
-//	File fXmlFile;
+
 	List<Operation> operationList;
 	
 	Element GlobalElement;

@@ -21,18 +21,21 @@ import java.io.File;
 
 public class OpandKey {
 	List<Operation> operationList;
+	List<String> KeywordsList;
+
 
 public OpandKey() {
 		test();
 
 		
-		for (int i = 0; i < operationList.size(); i++) {
+		for (int i = 0; i < KeywordsList.size(); i++) {
 
-			System.out.println("parametre numero "+(i+1)+":");
+			System.out.println("key numero "+(i+1)+":");
 
 
-			System.out.println("partname: "+ operationList.get(i).opname);
+			System.out.println("partname: "+ KeywordsList.get(i));
 			
+
 			System.out.println("*******");
 		}
 		System.out.println("---------------------------");
@@ -49,6 +52,8 @@ void test(){
 	
 	GetOperation Operations = new GetOperation(GlobalElement);
 	operationList = Operations.getOperationList();
+	GetKeyword Keyword = new GetKeyword(GlobalElement);
+	KeywordsList =  Keyword.getKeyword();
 	
 }
 

@@ -4,30 +4,26 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
+
 import org.w3c.dom.Element;
-import java.io.File;
+
 
 
 public class GetKeyword {
 	 File fXmlFile;	
 	 List<String> Keyword;
+	 Element GlobalElement;
+	 
+	 
 	 
 	 public List<String> getKeyword() {
 			return Keyword;
 		}
 	 
-	GetKeyword(File xml){
-		this.fXmlFile=xml;
+	GetKeyword(Element e){
+		this.GlobalElement=e;
 		getkey();
 	}
 	
@@ -36,13 +32,9 @@ public class GetKeyword {
 
 		  try {
 
-				 fXmlFile = new File("IBC.xml");
-				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-				Document doc = dBuilder.parse(fXmlFile);
-				doc.getDocumentElement().normalize();
+			
 				
-				Node Keywords = doc.getElementsByTagName("keywords").item(0);
+				Node Keywords = GlobalElement.getElementsByTagName("keywords").item(0);
 
 				for (int temp = 0; temp < Keywords.getChildNodes().getLength(); temp++) {
 					if (Keywords.getNodeType() == Node.ELEMENT_NODE) {
@@ -68,13 +60,6 @@ public class GetKeyword {
 		  System.out.println("taille totale de la liste : "+ Keyword.size());
 	}
 		
-	/*
-  public static void main(String[] args) {
-	  File ibc = new File("IBC.xml");
-		GetKeyword x = new GetKeyword(ibc);
-		
-		//x.print();
-	  
-}*/
+
 	
 }
