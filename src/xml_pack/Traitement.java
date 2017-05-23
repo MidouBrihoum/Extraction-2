@@ -16,7 +16,18 @@ public class Traitement {
 	
 	
 	
-	
+	void traite(){
+		Element globalICE = GetGlobalElementFromXmlFileName("ICE.XML");
+		Element globalIBC = GetGlobalElementFromXmlFileName("IBC.XML");
+		
+		InterfaceIBC_ICE ICE = new GenerateInterfaceFromGElement(globalICE).Getinterface();
+		InterfaceIBC_ICE IBC = new GenerateInterfaceFromGElement(globalIBC).Getinterface();
+
+		CompareInterfaces compare = new  CompareInterfaces(IBC,ICE);
+		
+		compare.Compare();
+		
+	}
 	
 	
 	
@@ -66,6 +77,15 @@ public class Traitement {
 		
 		
 	}
+	 
+	 
+	 
+	 
+	 public static void main(String []args){
+			
+		 new Traitement().traite();
+		 
+		}
 
 	 
 }
