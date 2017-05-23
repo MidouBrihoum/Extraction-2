@@ -105,7 +105,9 @@ try{
 	
 	List<Part> IcePart =part2;
 	List<Part> IbcPart = part1;
+	
 int total = IbcPart.size();
+int total2 = IcePart.size();
 int found=0;
 for (int i = 0; i < IbcPart.size(); i++) {
 	for (int j = 0; j < IcePart.size(); j++) {
@@ -116,6 +118,9 @@ for (int i = 0; i < IbcPart.size(); i++) {
 }
 if(total!=0){		
 Sim= ((float)found/(float)total)*100 ; }
+else if (total2==0){
+	Sim=100;
+} else {Sim=0;}
 System.out.print( " le nbr de paramétre total = "+total) ;
 System.out.print( " le nbr de paramétre trouvé dans ice =  "+found) ;
 System.out.print( " la similarité est  "+Sim) ;
