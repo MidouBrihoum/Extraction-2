@@ -3,7 +3,7 @@
 <!ELEMENT definition (abstr,concret)>
 <!ATTLIST definition  attr CDATA #IMPLIED   >
 
-<!ELEMENT abstr (keywords,types,message+,portType)>
+<!ELEMENT abstr (keywords,types,message+,operations)>
 <!ATTLIST abstr   id ID #REQUIRED>
 
 <!ELEMENT concret (liaison)>
@@ -18,8 +18,8 @@
 <!ELEMENT message (part)+>
 <!ATTLIST message  attr CDATA #IMPLIED   name NMTOKEN #REQUIRED>
 
-<!ELEMENT portType (operation)+>
-<!ATTLIST portType  attr CDATA #IMPLIED name  NMTOKEN #REQUIRED>
+<!ELEMENT operations (operation)+>
+<!ATTLIST operations  attr CDATA #IMPLIED name  NMTOKEN #REQUIRED>
 
 <!ELEMENT liaison (titre,application,operationC+)>
 <!ATTLIST liaison  attr CDATA #IMPLIED    name NMTOKEN #REQUIRED  type NMTOKEN #REQUIRED>

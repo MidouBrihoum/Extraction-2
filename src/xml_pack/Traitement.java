@@ -34,7 +34,7 @@ public class Traitement {
 			Node tempabst = Abstracts.item(temp); 
 			Element abstractelement = (Element) tempabst; // element operaiton
 
-			System.out.println("Comparer le IBC avec l'interface ICE du registre numero  "+temp); 
+			System.out.println("Comparer le IBC avec la partie abstraite de l'interface ICE du registre numero  "+temp); 
 			
 			
 			InterfaceIBC_ICE ICE = new GenerateInterfaceFromGElement(abstractelement).Getinterface();  // retrouve l'interface depuis l'element globale
@@ -48,7 +48,8 @@ public class Traitement {
 				System.out.println("la similarité est suffisante"); 
 				String filename= abstractelement.getAttribute("link").toString();
 			System.out.println("le fichié de l'interface ice:"+filename); 
-			} else {			System.out.println("la similarité n'est pas suffisante"); }
+			} else {			
+				System.out.println("la similarité n'est pas suffisante, la ICE numero "+temp+" n'est pas prise en compte "); }
 
 			
 			

@@ -40,6 +40,8 @@ System.out.println( "le nombre total des keywords dans IBC "+total) ;
 try{		
 Sim= ((float)found/(float)total)*100 ;} catch(Exception e) { Sim=(float) 0;}
 	
+System.out.println( "la similarité des keywords est "+Sim) ;
+
 	return Sim;}
 
 
