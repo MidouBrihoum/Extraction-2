@@ -3,32 +3,29 @@
 <!ELEMENT definition (abstr,concret)>
 <!ATTLIST definition  attr CDATA #IMPLIED   >
 
-<!ELEMENT abstr (keywords,types,message+,operations)>
+<!ELEMENT abstr (keywords,message+,operations)>
 <!ATTLIST abstr   id ID #REQUIRED>
 
-<!ELEMENT concret (liaison)>
+<!ELEMENT concret (application,operationC+)>
 <!ATTLIST concret    id ID #REQUIRED>
 
 <!ELEMENT keywords (Keyword)+>
 <!ATTLIST keywords attr CDATA #IMPLIED  >
 
-<!ELEMENT types (complexType)>
-<!ATTLIST types attr CDATA #IMPLIED  >
+
 
 <!ELEMENT message (part)+>
 <!ATTLIST message  attr CDATA #IMPLIED   name NMTOKEN #REQUIRED>
 
 <!ELEMENT operations (operation)+>
-<!ATTLIST operations  attr CDATA #IMPLIED name  NMTOKEN #REQUIRED>
+<!ATTLIST operations  attr CDATA #IMPLIED >
 
-<!ELEMENT liaison (titre,application,operationC+)>
-<!ATTLIST liaison  attr CDATA #IMPLIED    name NMTOKEN #REQUIRED  type NMTOKEN #REQUIRED>
+
 
 <!ELEMENT Keyword (#PCDATA)>
 <!ATTLIST Keyword attr CDATA #IMPLIED  >
 
-<!ELEMENT complexType (element)+>
-<!ATTLIST complexType  attr CDATA #IMPLIED   name NMTOKEN #REQUIRED>
+
 
 <!ELEMENT part EMPTY>
 <!ATTLIST part attr CDATA #IMPLIED    name NMTOKEN #REQUIRED type NMTOKEN #REQUIRED>
@@ -72,5 +69,4 @@
 <!ATTLIST Postcondition  attr CDATA #IMPLIED  
   name NMTOKEN #REQUIRED>
 
-<!ELEMENT titre (#PCDATA)>
-<!ATTLIST titre  attr CDATA #IMPLIED  >
+
